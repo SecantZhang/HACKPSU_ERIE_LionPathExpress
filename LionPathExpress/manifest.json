@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "version": "1.0",
+  "name": "LionPath Express",
+  "background": {
+    "scripts": [
+      "js/background.js"
+    ],
+    "persistent": false,
+    "run_at": "document_end"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.lionpath.psu.edu/psp/CSPRD/EMPLOYEE/HRMS/c/SA_LEARNER_SERVICES_2.SSS_MY_CRSEHIST.*"],
+      "js": ["js/ch_content_script.js"]
+    }        
+  ],
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+  "permissions": ["tabs", "<all_urls>", "activeTab", "*://*/*"]
+}
